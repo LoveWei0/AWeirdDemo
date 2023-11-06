@@ -6,6 +6,7 @@ import ScrollTop from './utils/scrollTop'
 // pages
 import Home from '@pages/Home/index'
 import About from './pages/About'
+import Partner from '@pages/Home/components/Partner'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/bout" element={<About />} />
+            <Route path="/partner" element={<Partner />} />
           </Routes>
         </ScrollTop>
       </HashRouter>

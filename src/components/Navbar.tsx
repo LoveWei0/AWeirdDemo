@@ -26,7 +26,11 @@ const navigation: NavigationDataType = [
   },
   {
     label: 'about',
-    route: '/bout',
+    route: '/about',
+  },
+  {
+    label: 'partner',
+    route: '/partner',
   },
 ]
 
