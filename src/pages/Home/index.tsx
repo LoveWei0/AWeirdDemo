@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import SectionTitle from '@/components/SectionTitle'
+import Lesson from '@/components/Lesson'
 // I18
 import { I18 } from '@/utils/i18'
 
@@ -24,6 +25,7 @@ export default function Home() {
       <SectionTitle pretitle="" align="left" title={t('slogan3')}>
         {t('value-desc')}
       </SectionTitle>
+      <Lesson />
     </>
   )
 }
