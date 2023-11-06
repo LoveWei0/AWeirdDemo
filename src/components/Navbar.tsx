@@ -147,7 +147,7 @@ export default function Navbar() {
             <IconButton className="text-gray-500" onClick={changeLang}>
               <TranslateIcon />
             </IconButton>
-            <button onClick={() => loginWithRedirect()}>Login</button>
+            <button onClick={() => loginWithRedirect()}>{t('Login')}</button>
           </div>
         </div>
       </nav>
