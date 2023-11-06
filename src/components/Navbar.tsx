@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 // Disclosure
 import { Disclosure } from '@headlessui/react'
 // react-router-dom
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 // @mui/material
 import IconButton from '@mui/material/IconButton'
 // @mui/icons-material
 import TranslateIcon from '@mui/icons-material/Translate'
+// react-i18next
+import { useTranslation } from 'react-i18next'
 
 interface NavigationType {
   label: string
@@ -29,6 +31,17 @@ const navigation: NavigationDataType = [
 export default function Navbar() {
   const [currentNav, setCurrentNav] = useState<string>('/')
   console.log(setCurrentNav)
+  const { t, i18n } = useTranslation('common')
+  const locale = i18n.language
+  const location = useLocation()
+  useEffect(() => {
+    const r = location.pathname.split('/')[1]
+    setCurrentNav(`/${r}`)
+  }, [location.pathname])
+  const changeLang = () => {
+    const changeTo = i18n.language === 'en' ? 'zh' : 'en'
+    i18n.changeLanguage(changeTo)
+  }
   return (
     <div className="w-full">
       <nav className="container flex relative flex-wrap items-center justify-between p-3 mx-auto xl:justify-between xl:px-0">
@@ -42,7 +55,11 @@ export default function Navbar() {
                     className="text-cyan-700 text-2xl font-medium space-x-2"
                   >
                     <img
-                      src="/logo/logo-eng.png"
+                      src={
+                        locale === 'en'
+                          ? '/logo/logo-eng.png'
+                          : '/logo/logo-zh.png'
+                      }
                       alt="N"
                       width="220"
                       height="70"
@@ -83,12 +100,15 @@ export default function Navbar() {
                               : 'text-gray-500'
                           } text-center w-full px-4 py-2 -ml- rounded-md hover:text-cyan-700 focus: text-cyan-700 focus:outline-none`}
                         >
-                          {item.label}
+                          {t(item.label)}
                         </Link>
                       )
                     })}
                     <div className="text-center w-full px-4 py-2 text-gray-500 rounded-md hover:text-cyan-700 focus:text-cyan-700 focus:outline-none">
-                      <IconButton className="text-gray-500">
+                      <IconButton
+                        className="text-gray-500"
+                        onClick={changeLang}
+                      >
                         <TranslateIcon />
                       </IconButton>
                     </div>
@@ -112,7 +132,7 @@ export default function Navbar() {
                         : 'text-gray-800'
                     } font-bold inline-block px-4 py-2 text-lg font-normal  no-underline rounded-md   hover:text-cyan-700 focus:text-cyan-700 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800`}
                   >
-                    {menu.label}
+                    {t(menu.label)}
                   </Link>
                 </li>
               )
@@ -121,7 +141,7 @@ export default function Navbar() {
         </div>
         <div className="hidden mr-3 space-x-4 xl:flex nav__item">
           <div>
-            <IconButton className="text-gray-500">
+            <IconButton className="text-gray-500" onClick={changeLang}>
               <TranslateIcon />
             </IconButton>
             <button>Login</button>
