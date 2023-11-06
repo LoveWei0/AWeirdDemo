@@ -5,6 +5,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import ScrollTop from './utils/scrollTop'
 // pages
 import Home from '@pages/Home/index'
+import About from './pages/About'
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <ScrollTop>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/bout" element={<About />} />
           </Routes>
         </ScrollTop>
       </HashRouter>
