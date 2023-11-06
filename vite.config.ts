@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       '@': join(__dirname, 'src'),
       '@utils': join(__dirname, 'src/utils'),
+      '@pages': join(__dirname, 'src/pages'),
     },
   },
 })
