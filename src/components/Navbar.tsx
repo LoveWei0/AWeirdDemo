@@ -9,6 +9,8 @@ import IconButton from '@mui/material/IconButton'
 import TranslateIcon from '@mui/icons-material/Translate'
 // react-i18next
 import { useTranslation } from 'react-i18next'
+// @auth0 -> hooks
+import { useAuth0 } from '@auth0/auth0-react'
 
 interface NavigationType {
   label: string
@@ -30,7 +32,7 @@ const navigation: NavigationDataType = [
 
 export default function Navbar() {
   const [currentNav, setCurrentNav] = useState<string>('/')
-  console.log(setCurrentNav)
+  // console.log(setCurrentNav)
   const { t, i18n } = useTranslation('common')
   const locale = i18n.language
   const location = useLocation()
@@ -42,6 +44,7 @@ export default function Navbar() {
     const changeTo = i18n.language === 'en' ? 'zh' : 'en'
     i18n.changeLanguage(changeTo)
   }
+  const { loginWithRedirect } = useAuth0()
   return (
     <div className="w-full">
       <nav className="container flex relative flex-wrap items-center justify-between p-3 mx-auto xl:justify-between xl:px-0">
@@ -144,7 +147,7 @@ export default function Navbar() {
             <IconButton className="text-gray-500" onClick={changeLang}>
               <TranslateIcon />
             </IconButton>
-            <button>Login</button>
+            <button onClick={() => loginWithRedirect()}>Login</button>
           </div>
         </div>
       </nav>
