@@ -14,7 +14,7 @@ interface TitleType {
 }
 
 export default function ButtonCard({ title, pathName }: TitleType) {
-  const t = I18()
+  const { t } = I18()
   return (
     <Button type="link" className="flex">
       <Link
