@@ -84,7 +84,7 @@ export default function Hero() {
           })}
         </div>
       </div>
-      <div className="w-full h-80" style={{ backgroundColor: '#0d7a98' }}>
+      <div className="w-full" style={{ backgroundColor: '#0d7a98' }}>
         <div className="relative px-5 md:px-5 md:py-5 lg:p-0 flex gap-5">
           <div className="lg:block lg:w-60" style={{ width: '220px' }}>
             <img

@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
-// i18next
-// import { useTranslation } from 'react-i18next'
 // components
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import SectionTitle from '@/components/SectionTitle'
+// I18
+import { I18 } from '@/utils/i18'
 
 export default function Home() {
-  // const { t } = useTranslation('common')
+  const { t } = I18()
   useEffect(() => {
     window.$crisp = []
     window.CRISP_WEBSITE_ID = 'e60fe710-4049-471d-8dab-b61e41152145'
@@ -20,6 +21,9 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <SectionTitle pretitle="" align="left" title={t('slogan3')}>
+        {t('value-desc')}
+      </SectionTitle>
     </>
   )
 }
