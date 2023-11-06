@@ -119,7 +119,7 @@ export default function Navbar() {
             })}
           </ul>
         </div>
-        <div className="mr-3 space-x-4 xl:flex nav__item">
+        <div className="hidden mr-3 space-x-4 xl:flex nav__item">
           <div>
             <IconButton className="text-gray-500">
               <TranslateIcon />
