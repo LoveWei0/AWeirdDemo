@@ -23,7 +23,7 @@ export default function App() {
         <ScrollTop>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/bout" element={<About />} />
+            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/partner" element={<Partner />} />
