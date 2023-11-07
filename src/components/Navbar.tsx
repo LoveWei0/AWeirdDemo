@@ -169,7 +169,7 @@ export default function Navbar() {
                       menu.route === currentNav
                         ? 'text-cyan-700'
                         : 'text-gray-800'
-                    } font-bold inline-block px-4 py-2 text-lg font-normal  no-underline rounded-md   hover:text-cyan-700 focus:text-cyan-700 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800`}
+                    } inline-block px-4 py-2 text-lg font-normal  no-underline rounded-md   hover:text-cyan-700 focus:text-cyan-700 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800`}
                   >
                     {t(menu.label)}
                   </Link>
