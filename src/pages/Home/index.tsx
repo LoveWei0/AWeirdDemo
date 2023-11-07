@@ -5,6 +5,7 @@ import Hero from '@/components/Hero'
 import SectionTitle from '@/components/SectionTitle'
 import Lesson from '@/components/Lesson'
 import Feedback from '@/components/Feedback'
+import Footer from '@/components/Footer'
 // I18
 import { I18 } from '@/utils/i18'
 
@@ -28,6 +29,7 @@ export default function Home() {
       </SectionTitle>
       <Lesson />
       <Feedback />
+      <Footer />
     </>
   )
 }
