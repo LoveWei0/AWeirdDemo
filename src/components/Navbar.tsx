@@ -29,8 +29,40 @@ const navigation: NavigationDataType = [
     route: '/about',
   },
   {
+    label: 'contact',
+    route: '/contact',
+  },
+  {
+    label: 'feedback',
+    route: '/feedback',
+  },
+  {
     label: 'partner',
     route: '/partner',
+  },
+  {
+    label: 'privacy',
+    route: '/privacy',
+  },
+  {
+    label: 'subscribe',
+    route: '/subscribe',
+  },
+  {
+    label: 'terms',
+    route: '/terms',
+  },
+  {
+    label: 'phdReady',
+    route: '/phdReady',
+  },
+  {
+    label: 'masterclass',
+    route: '/masterclass',
+  },
+  {
+    label: 'studyOversea',
+    route: '/studyOversea',
   },
 ]
 
