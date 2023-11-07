@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import SectionTitle from '@/components/SectionTitle'
 import Lesson from '@/components/Lesson'
+import Feedback from '@/components/Feedback'
 // I18
 import { I18 } from '@/utils/i18'
 
@@ -26,6 +27,7 @@ export default function Home() {
         {t('value-desc')}
       </SectionTitle>
       <Lesson />
+      <Feedback />
     </>
   )
 }
