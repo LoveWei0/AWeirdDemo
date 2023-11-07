@@ -1,6 +1,7 @@
 import React from 'react'
 // components
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 // I18
 import { I18 } from '@utils/i18'
 
@@ -47,6 +48,7 @@ export default function About() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   )
 }
