@@ -5,9 +5,9 @@ import { Carousel, Form, Input, Checkbox, Button } from 'antd'
 import BannerCard from './BannerCard'
 import ButtonCard from './ButtonCard'
 // banner -> image
-import bannerOne from '../../public/images/banner/home_banner1.png'
-import bannerTwo from '../../public/images/banner/home_banner2.png'
-import bannerThree from '../../public/images/banner/home_banner3.png'
+import bannerOne from '../assets/images/banner/home_banner1.png'
+import bannerTwo from '../assets/images/banner/home_banner2.png'
+import bannerThree from '../assets/images/banner/home_banner3.png'
 // utils -> I18
 import { I18 } from '@utils/i18'
 // react-router-dom

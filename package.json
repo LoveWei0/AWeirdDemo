@@ -37,11 +37,13 @@
     "@mui/icons-material": "^5.14.16",
     "@mui/material": "^5.14.16",
     "antd": "^5.11.0",
+    "axios": "^1.6.0",
     "i18next": "^23.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.3.1",
-    "react-router-dom": "^6.18.0"
+    "react-router-dom": "^6.18.0",
+    "store": "^2.0.12"
   },
   "devDependencies": {
     "@auth0/auth0-react": "^2.2.3",

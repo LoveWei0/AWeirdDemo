@@ -2,10 +2,10 @@ import React from 'react'
 // I18
 import { I18 } from '@/utils/i18'
 // images
-import Feedback from '../../public/images/img/icons/Icon-Turnitin Feedback.png'
-import Prep from '../../public/images/img/icons/Icon--Leader Prep.png'
-import Preparation from '../../public/images/img/icons/icon_phD preparation@3x.png'
-import WeChat from '../../public/images/img/icons/WechatIMG1663.png'
+import Feedback from '../assets/images/img/icons/Icon-Turnitin Feedback.png'
+import Prep from '../assets/images/img/icons/Icon--Leader Prep.png'
+import Preparation from '../assets/images/img/icons/icon_phD preparation@3x.png'
+import WeChat from '../assets/images/img/icons/WechatIMG1663.png'
 // icons
 import { RightOutlined } from '@ant-design/icons'
 // antd

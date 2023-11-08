@@ -4,10 +4,10 @@ import { I18 } from '@/utils/i18'
 // react-router-dom
 import { Link } from 'react-router-dom'
 // icon
-import fb from '../../public/logo/fb.png'
-import ins from '../../public/logo/ins.png'
-import twitter from '../../public/logo/twitter.png'
-import tt from '../../public/logo/tt.png'
+import fb from '../assets/logo/fb.png'
+import ins from '../assets/logo/ins.png'
+import twitter from '../assets/logo/twitter.png'
+import tt from '../assets/logo/tt.png'
 
 interface NavigationType {
   label: string

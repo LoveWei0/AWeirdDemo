@@ -12,4 +12,13 @@ export default defineConfig({
       '@pages': join(__dirname, 'src/pages'),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://web5-gowedu-dev.azurewebsites.net',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
 })

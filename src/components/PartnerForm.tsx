@@ -1,18 +1,44 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // I18
 import { I18 } from '@utils/i18'
 // antd
-import { Form, Input, Button } from 'antd'
+import { Form, Input, Button, message } from 'antd'
 // components
 import MainButton from '@/components/MainButton'
+// store
+import store from 'store'
+
+const sentWaitTime = 20 * 1000
 
 export default function PartnerForm() {
   const { t } = I18()
   const [form] = Form.useForm()
-  const sent = 1
+  const [sent, setSent] = useState(store.get('sent'))
   const [hasBeforeInput, setHasBeforeInput] = useState(false)
+
   const [enterEnable, setEnterEnable] = useState(false)
+  const [expire, setExpire] = useState(Number(store.get('expire')))
+  const [messageApi, contextHolder] = message.useMessage()
   console.log(setHasBeforeInput, setEnterEnable)
+  console.log(messageApi, contextHolder)
+  useEffect(() => {
+    if (sent) {
+      setTimeout(() => {
+        setSent(false)
+        store.set('sent', 0)
+      }, expire - Date.now())
+    }
+  })
+  const handleClick = async () => {
+    store.set('sent', 1)
+    store.set('expire', Date.now() + sentWaitTime)
+    setSent(true)
+    setExpire(Date.now() + sentWaitTime)
+    setTimeout(() => {
+      setSent(false)
+      store.set('sent', 0)
+    }, sentWaitTime)
+  }
   return (
     <div className="flex justify-center pt-10 w-full">
       <div className="shadow w-full max-w-2xl rounded p-10 mb-10 bg-white">
@@ -48,7 +74,10 @@ export default function PartnerForm() {
             <Form.Item name="entityName" label={t('entity-name')}>
               <Input placeholder={t('entity-name')} />
             </Form.Item>
-            <MainButton disabled={sent || !hasBeforeInput}>
+            <MainButton
+              disabled={sent || !hasBeforeInput}
+              onClick={handleClick}
+            >
               {sent ? t('sent-code') : t('get-code')}
             </MainButton>
             <Form.Item

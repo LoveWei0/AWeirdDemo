@@ -17,6 +17,7 @@ export default function Partner() {
   const [step, setStep] = useState<number>(1)
   const [agreeTerms, setAgreeTerms] = useState<boolean>(false)
   console.log(setStep, setAgreeTerms)
+
   return (
     <>
       <Navbar />
